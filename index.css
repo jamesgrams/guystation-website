@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'toy-train';
+    src: url('fonts/Toy-Train.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'blinker';
+    src: url('fonts/Blinker-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #191919;
+    color: white;
+    font-family: 'blinker', 'sans-serif';
+    padding: 0;
+    text-align: center;
+    font-size: 16pt;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1 {
+    font-family: 'toy-train';
+    font-size: 48pt;
+    font-weight: 100;
+    padding: 80px 0;
+}
+
+h2 {
+    font-size: 28pt;
+}
+
+.wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    margin-bottom: 20px;
+}
+
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 1096px;
+}
+
+li.feature {
+    list-style-type: none;
+    width: 250px;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    vertical-align: top;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+li.feature:nth-child(3n+1) {
+    order: 0;
+}
+li.feature:nth-child(3n+2) {
+    order: 1;
+}
+li.feature:nth-child(3n+3) {
+    order: 2;
+}
+
+.feature-title {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.feature-body {
+    font-size: 13pt;
+}

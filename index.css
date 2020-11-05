@@ -76,16 +76,6 @@ li.feature {
     border-radius: 20px;
 }
 
-li.feature:nth-child(3n+1) {
-    order: 0;
-}
-li.feature:nth-child(3n+2) {
-    order: 1;
-}
-li.feature:nth-child(3n+3) {
-    order: 2;
-}
-
 .feature-title {
     font-style: italic;
     font-weight: bold;
@@ -99,16 +89,28 @@ ol {
     text-align: left;
 }
 
-@media only screen and (max-width: 1039px) {
-    #features-list {
-        height: 1558px;
+@media only screen and (min-width: 1040px) {
+    li.feature:nth-child(3n+1) {
+        order: 0;
+    }
+    li.feature:nth-child(3n+2) {
+        order: 1;
+    }
+    li.feature:nth-child(3n+3) {
+        order: 2;
+    }    
+}
+
+@media only screen and (max-width: 1039px) and (min-width: 661px) {
+    li.feature:nth-child(2n+1) {
+        order: 0;
+    }
+    li.feature:nth-child(2n+2) {
+        order: 1;
     }
 }
 
 @media only screen and (max-width: 660px) {
-    #features-list {
-        height: 2958px;
-    }
     h1 {
         font-size: 36pt;
     }

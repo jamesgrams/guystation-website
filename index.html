@@ -34,73 +34,73 @@
         <ul id="features-list">
             <li class="feature">
                 <div class="feature-title">Play Classic Games</div>
-                <div class="feature-body">
+                <div class="feature-body" data-pictures='["images/classic-3ds.png","images/classic-ds.png","images/classic-gamecube.png","images/classic-gba.png","images/classic-n64.png","images/classic-nes.png","images/classic-ps2.png","images/classic-psp.jpg","images/classic-snes.png","images/classic-wii.png"]'>
                     Support for Game Boy, Game Boy Color, Game Boy Advance, NES, Nintendo DS, Nintendo 3DS, Nintendo 64, Nintendo GameCube, Wii, PC, PlayStation 1, PlayStation 2, PSP, and SNES
                 </div>
             </li>
             <li class="feature">
                 <div class="feature-title">Remote Play</div>
-                <div class="feature-body">
+                <div class="feature-body" data-pictures='["images/remote-play.png","images/remote-play2.png"]'>
                     Play from any device with a web browser in your house. GuyStation will stream to your device, and you can control GuyStation remotely with a keyboard, controller, or phone's touch screen. 
                 </div>
             </li>
             <li class="feature">
                 <div class="feature-title">Remote Control</div>
-                <div class="feature-body">
+                <div class="feature-body" data-pictures='["images/remote-control.png"]'>
                     GuyStation's interface is a webpage that is made accessible on your network. This means you can add games, add saves, switch saves, and more from any device in your house.
                 </div>
             </li>
             <li class="feature">
                 <div class="feature-title">Multi-Save</div>
-                <div class="feature-body">
+                <div class="feature-body" data-pictures='["images/multi-save.png"]'>
                     Easily create and switch between save files for any game. This allows for multiple adventures on games that limit you to one. Your screenshots are associated with your save file.
                 </div>
             </li>
             <li class="feature">
                 <div class="feature-title">Internet Browser</div>
-                <div class="feature-body">
+                <div class="feature-body" data-pictures='["images/browser.png"]'>
                     Access any website on your TV and control the browser with any device you like. Additional features allow you to play other consoles in-browser through HDMI input, given you have the correct hardware. Advanced users can create browser scripts to perform functions such as automatically playing popular videos on Disney+!
                 </div>
             </li>
             <li class="feature">
                 <div class="feature-title">Media Player</div>
-                <div class="feature-body">
+                <div class="feature-body" data-pictures='["images/media-player.png","images/media-player2.png"]'>
                     Play videos and music and stream them to any device in your house. Create playlists from your files for maximum fun!
                 </div>
             </li>
             <li class="feature">
                 <div class="feature-title">Easy Controller Configuration</div>
-                <div class="feature-body">
+                <div class="feature-body" data-pictures='["images/ez-controller-config.png"]'>
                     Set the controls for all systems at once using GuyStation's built-in controller configuration. You can save configurations as profiles and set devices to load profiles automatically when you play a game from them. Want to use gamepad controls on the TV and keyboard controls when playing remotely on your computer? No Problem!
                 </div>
             </li>
             <li class="feature">
                 <div class="feature-title">Direct ROM Download</div>
-                <div class="feature-body">
+                <div class="feature-body" data-pictures='["images/direct-rom.png"]'>
                     In addition to uploading games to GuyStation from any device, if you have a link to a ROM or zip file containing a ROM, you can simply enter that link, and GuyStation will download it and extract it ready for you to play. This works for YouTube videos as well for the media player.
                 </div>
             </li>
             <li class="feature">
                 <div class="feature-title">Picture-in-Picture Mode</div>
-                <div class="feature-body">
+                <div class="feature-body" data-pictures='["images/pip.png","images/pip2.png","images/pip3.png"]'>
                     You can watch videos in Picture-in-Picture while you play and easily switch between full-screen and picture-in-picture mode. You can play videos from any URL with a video on it or media you have downloaded to GuyStation.
                 </div>
             </li>
             <li class="feature">
                 <div class="feature-title">IGDB Game Info</div>
-                <div class="feature-body">
+                <div class="feature-body" data-pictures='["images/igdb.png"]'>
                     Following the necessary setup, GuyStation will display cover art, release dates, and descriptions for every game it can find in the IGDB.
                 </div>
             </li>
             <li class="feature">
                 <div class="feature-title">Seamless Screenshot Integration</div>
-                <div class="feature-body">
+                <div class="feature-body" data-pictures='["images/screenshots.png","images/screenshots2.png"]'>
                     You can use the controller configuration to set one keyboard key to take screenshots on all emulators. Your screenshots will be accessible through GuyStation's web interface.
                 </div>
             </li>
             <li class="feature">
                 <div class="feature-title">Messages</div>
-                <div class="feature-body">
+                <div class="feature-body" data-pictures='["images/messaging.png"]'>
                     Messages can be sent between GuyStation users on the same network.
                 </div>
             </li>
@@ -119,10 +119,72 @@
         </ol>
         See the <a target="_blank" rel="nofollow noreferrer" href="https://github.com/jamesgrams/guystation/blob/master/README.md">GuyStation Readme</a> for full documentation.
         <script>
+            function shuffle(array) {
+                var currentIndex = array.length, temporaryValue, randomIndex;
+
+                // While there remain elements to shuffle...
+                while (0 !== currentIndex) {
+
+                    // Pick a remaining element...
+                    randomIndex = Math.floor(Math.random() * currentIndex);
+                    currentIndex -= 1;
+
+                    // And swap it with the current element.
+                    temporaryValue = array[currentIndex];
+                    array[currentIndex] = array[randomIndex];
+                    array[randomIndex] = temporaryValue;
+                }
+
+                return array;
+            }
+
+            function createImages() {
+                let imageContainers = document.querySelectorAll("[data-pictures]");
+                imageContainers.forEach( el => {
+                    let pictures = JSON.parse(el.getAttribute("data-pictures"));
+                    pictures = shuffle(pictures);
+                    let count = 0;
+                    let imageContainer = document.createElement("div");
+                    imageContainer.classList.add("image-container");
+                    el.appendChild(imageContainer);
+                    let pictureElements = [];
+                    for( let picture of pictures ) {
+                        let img = document.createElement("img");
+                        img.setAttribute("src", picture);
+                        img.setAttribute("alt", "Highlight example");
+                        if( count > 0 ) img.classList.add("hidden");
+                        else img.classList.add("fade-in");
+                        imageContainer.append(img);
+                        pictureElements.push(img);
+                        count ++;
+                    }
+                    // slideshow
+                    if( pictures.length > 1 ) {
+                        let cursor = 0;
+                        let doChange = function() { 
+                            setTimeout( () => {
+                                let currentImage = pictureElements[cursor];
+                                cursor++;
+                                if( cursor >= pictures.length ) cursor = 0;
+                                let nextImage = pictureElements[cursor];
+                                currentImage.classList.remove("fade-in");
+                                setTimeout( () => nextImage.classList.add("fade-in"), 20 ); // allow time to unhide element
+                                nextImage.classList.remove("hidden");
+                                setTimeout( () => {
+                                    currentImage.classList.add("hidden");
+                                }, 500 ); // match css
+                                doChange();
+                            }, 7000 + (Math.random() * 3000 - 1500) );
+                        }
+                        doChange();
+                    }
+                } );
+            }
+            createImages();
+
             function setColumnHeight () {
                 let totalColumns = window.innerWidth >= 1040 ? 3 : window.innerWidth >= 661 ? 2 : 1; // consistent with css
                 let maxColumnHeight = 0;
-                console.log(totalColumns);
                 for( let i=1; i<=totalColumns; i++ ) {
                     let columnHeight = [...document.querySelectorAll("li.feature:nth-child("+totalColumns+"n+"+i+")")].map(el => {
                         let style = window.getComputedStyle(el);

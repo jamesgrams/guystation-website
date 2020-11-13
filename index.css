@@ -89,6 +89,32 @@ ol {
     text-align: left;
 }
 
+.hidden {
+    display: none;
+}
+
+.image-container {
+    height: 200px;
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+}
+
+.image-container > img {
+    max-width: 100%;
+    max-height: 100%;
+    transition: opacity 0.5s;
+    position: absolute;
+    opacity: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.fade-in {
+    opacity: 1 !important;
+}
+
 @media only screen and (min-width: 1040px) {
     li.feature:nth-child(3n+1) {
         order: 0;

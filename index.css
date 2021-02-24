@@ -46,6 +46,10 @@ h2 {
     margin-bottom: 20px;
 }
 
+.wrapper-twitch {
+    margin-top: 10px;
+}
+
 iframe {
     position: absolute;
     top: 0;

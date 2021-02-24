@@ -22,6 +22,8 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
+
+        <script src="https://embed.twitch.tv/embed/v1.js"></script>
     </head>
     <body>
         <h1>GuyStation</h1>
@@ -118,8 +120,13 @@
             </li>
         </ol>
         See the <a target="_blank" rel="nofollow noreferrer" href="https://github.com/jamesgrams/guystation/blob/master/README.md">GuyStation Readme</a> for full documentation.
+        <h2>Twitch Stream</h2>
+        Sometimes I stream GuyStation on Twitch (using GuyStation's built-in streaming capabilities). You can watch the stream and chat here!
+        <div class="wrapper wrapper-twitch">
+            <div id="twitch-embed"></div>
+        </div>
         <footer>
-            © 2020 <a target="_blank" rel="nofollow noreferrer" href="https://jamesgrams.com">James Grams</a>
+            © <span id="date"></span> <a target="_blank" rel="nofollow noreferrer" href="https://jamesgrams.com">James Grams</a>
         </footer>
         <script>
             function shuffle(array) {
@@ -207,6 +214,13 @@
                 setTimeout( setColumnHeight, i * 100 );
             }
             window.onresize = setColumnHeight;
+
+            document.querySelector("#date").innerText = new Date().getFullYear();
+            new Twitch.Embed("twitch-embed", {
+                width: 854,
+                height: 480,
+                channel: "hallaby"
+            });
         </script>
     </body>
 </html>

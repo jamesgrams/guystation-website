@@ -1,0 +1,6 @@
+{
+    "siteUrl":"https://www.disneyplus.com/home",
+    "script":[
+        "document.querySelector('[data-testid=\"continue-watching\"] a').click()"
+    ]
+}

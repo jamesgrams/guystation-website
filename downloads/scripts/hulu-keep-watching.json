@@ -1,0 +1,6 @@
+{
+    "siteUrl": "https://www.hulu.com/",
+    "script": [
+        "document.querySelector('#keep-watching').parentNode.parentNode.parentNode.parentNode.querySelector('li button').click()"
+    ]
+}

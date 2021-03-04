@@ -1,0 +1,7 @@
+{
+    "siteUrl":"https://www.amazon.com/gp/video/storefront/ref=topnav_storetab_atv?node=2858778011",
+    "script":[
+        "document.querySelector('.tst-card-wrapper a').click()",
+        "document.querySelector('.dv-dp-node-playback a').click()"
+    ]
+}

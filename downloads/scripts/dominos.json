@@ -1,0 +1,21 @@
+{
+    "siteUrl": "https://www.dominos.com",
+    "script": [
+        "document.querySelector('[data-quid=\"main-navigation-order-online\"]').click()",
+        "document.querySelector('[data-quid=\"easy-order-locator-delivery\"]').click()",
+        "document.querySelector('[data-quid=\"locator-search-button\"]').click()",
+        "document.querySelector('[data-quid=\"entree-epic\"]').click()",
+        "document.querySelector('[data-quid=\"start-from-scratch\"]').click()",
+        "document.querySelector('[data-quid=\"pizza-size-14-size\"]').click()",
+        "document.querySelector('[data-quid=\"progress-bar-toppings\"]').click()",
+        "document.querySelector('[data-quid=\"builder-no-step-upsell\"]').click()",
+        "document.querySelector('[data-quid=\"builder-no-step-upsell\"]').click()",
+        "document.querySelector('[data-quid=\"builder-topping-P\"]').click()",
+        "document.querySelector('select[name=\"Weight|P\"]').value=1.5",
+        "document.querySelector('[data-quid=\"add-pizzabuilder-button\"]').click()",
+        "document.querySelector('[data-quid=\"generic-overlay-close\"]').click()",
+        "document.querySelector('[data-quid=\"order-checkout-button\"]').click()",
+        "document.querySelector('[data-quid=\"overlay-no-thanks\"]').click()",
+        "document.querySelector('[data-quid=\"continue-checkout-btn\"]').click()"
+    ]
+}

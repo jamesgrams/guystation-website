@@ -141,7 +141,7 @@ footer {
     }
     li.feature:nth-child(3n+3) {
         order: 2;
-    }    
+    }
 }
 
 @media only screen and (max-width: 1039px) and (min-width: 661px) {
